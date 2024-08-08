@@ -17,7 +17,7 @@ app.use(express.json());
 
 
 
-app.use('/api/courses',coursesRouter)
+app.use('/api/courses',coursesRouter);
 
 
 
