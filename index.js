@@ -1,11 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const app= express();
 
 
 const mongoose = require('mongoose');
 
-const url="mongodb+srv://alanghribi:Sidibelabbes22@test.u4bfo.mongodb.net/test"
- 
+const url=process.env.MONGODB_URL;
+
 mongoose.connect(url).then(()=>{
    console.log("mongodb server Started");
  })
@@ -20,6 +21,6 @@ app.use('/api/courses',coursesRouter)
 
 
 
-app.listen(5000,()=>{
-console.log("this is the port 5000");
+app.listen(process.env.PORT || 4000,()=>{
+console.log("this is the port 4000");
 });
