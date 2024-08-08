@@ -22,5 +22,5 @@ app.use('/api/courses',coursesRouter)
 
 
 app.listen(process.env.PORT || 4000,()=>{
-console.log("this is the port 4000");
+console.log("this is the port 5000");
 });
