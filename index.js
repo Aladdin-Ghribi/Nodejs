@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app= express();
-const httpStatus = require('../utils/http.status');
+const httpStatus = require('./utils/http.status');
 
 
 const mongoose = require('mongoose');
