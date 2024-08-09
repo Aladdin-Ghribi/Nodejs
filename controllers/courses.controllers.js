@@ -5,7 +5,7 @@ const httpStatus = require('../utils/http.status');
 
 const getAllCourses= async (req,res)=>{
    //get all courses from db using cours model
-   const courses= await Course.find();
+   const courses= await Course.find({},{"__v": false});
    res.json({status:httpStatus.SUCCSSES,data:{courses}});
 };
 
