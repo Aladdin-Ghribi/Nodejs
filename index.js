@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app= express();
+const httpStatus = require('../utils/http.status');
 
 
 const mongoose = require('mongoose');
@@ -18,7 +19,9 @@ app.use(express.json());
 
 
 app.use('/api/courses',coursesRouter);
-
+app.all('*',(req, res)=>{
+  res.status(400).json({status:httpStatus.ERROR,message:"NOT AVAILABLE"});
+})
 
 
 app.listen(process.env.PORT || 4000,()=>{
